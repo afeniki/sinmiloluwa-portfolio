@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinmiloluwa Afeniiki Ayoola - Data Analyst Portfolio</title>
+    <!-- Load Google Font: Montserrat (Added for a professional, clean look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Three.js for 3D animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for the Three.js container */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Custom scrollbar styling for a sleeker look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827; /* dark bg */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4B5563; /* gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6EE7B7; /* accent color */
+        }
+        
+        /* Apply smooth scrolling and Montserrat font */
+        html {
+            scroll-behavior: smooth;
+            /* Changed font to Montserrat */
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-primary': '#111827', // Gray-900 for dark mode background
+                        'dark-secondary': '#1F2937', // Gray-800 for cards/sections
+                        'accent-teal': '#6EE7B7', // Emerald-300 for highlights
+                        'text-light': '#F3F4F6', // Gray-100 for text
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-primary text-text-light antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-dark-primary/95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-2xl font-bold text-accent-teal tracking-wider">SINMILOLUWA AFENIIKI AYOOLA</a>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-accent-teal px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-accent-teal px-3 py-2 rounded-md text-sm font-medium transition duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-accent-teal px-3 py-2 rounded-md text-sm font-medium transition duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-accent-teal px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+        =======================================
+        SECTION 1: HERO (With Three.js Animation)
+        =======================================
+    -->
+    <header id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Three.js Canvas Container (Background) -->
+        <canvas id="hero-canvas"></canvas>
+
+        <div class="relative z-10 text-center p-6 bg-dark-primary/50 rounded-xl shadow-2xl backdrop-blur-sm max-w-4xl mx-4 transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-text-light mb-4">
+                Hi, I'm Sinmiloluwa Afeniiki Ayoola.
+            </h1>
+            <p id="typing-text" class="text-2xl md:text-3xl text-accent-teal font-light h-10 min-h-full">
+                <!-- Text will be typed here -->
+            </p>
+            <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+                Transforming complex data into clear, actionable business strategies through rigorous analysis and compelling visualization.
+            </p>
+            <a href="#projects" class="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-dark-primary bg-accent-teal hover:bg-emerald-400 transition duration-300 transform hover:scale-105">
+                View My Case Studies
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 
+        =======================================
+        SECTION 2: ABOUT ME
+        =======================================
+    -->
+    <section id="about" class="py-20 md:py-32 bg-dark-secondary">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-accent-teal mb-12 transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in>
+                About Me
+            </h2>
+            <div class="grid md:grid-cols-3 gap-10 items-center">
+                <!-- Profile Card -->
+                <div class="md:col-span-1 p-6 rounded-xl bg-dark-primary shadow-lg text-center transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="100">
+                    <img src="https://placehold.co/150x150/111827/F3F4F6?text=SAA" alt="Sinmiloluwa Afeniiki Ayoola profile" class="w-36 h-36 rounded-full mx-auto mb-4 border-4 border-accent-teal object-cover">
+                    <h3 class="text-2xl font-semibold">Sinmiloluwa Afeniiki Ayoola</h3>
+                    <p class="text-gray-400">Data Analyst</p>
+                    <p class="mt-4 text-sm text-gray-400">
+                        "Data is the foundation of innovation. I specialize in bridging the gap between raw information and strategic decision-making."
+                    </p>
+                </div>
+
+                <!-- Bio/Summary -->
+                <div class="md:col-span-2 space-y-6 text-lg text-gray-300 transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="200">
+                    <p>
+                        With over two years of experience in high-growth environments, my expertise lies in statistical modeling, developing interactive dashboards and business Intelligence that drive tangible business results. I possess a deep understanding of the full data lifecycle, from collection and cleaning to final presentation.
+                    </p>
+                    <p>
+                        I am deeply passionate about automating reporting workflows with analytical tools like Power BI, most especially Excel sheets,  and utilizing advanced Python libraries (Pandas, Scikit-learn) to perform predictive analysis. My work has consistently brought about significantly high results for previous employers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        =======================================
+        SECTION 3: SKILLS & TOOLKIT
+        =======================================
+    -->
+    <section id="skills" class="py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-accent-teal mb-12 transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in>
+                My Data Toolkit
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Skill 1 -->
+                <div class="flex flex-col items-center p-4 bg-dark-secondary rounded-xl shadow-xl hover:shadow-accent-teal/30 transition duration-300 transform hover:scale-105 group transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="0">
+                    <i data-lucide="database" class="w-10 h-10 text-accent-teal group-hover:text-text-light transition duration-300 mb-2"></i>
+                    <span class="text-lg font-semibold text-text-light">SQL (Advanced)</span>
+                    <span class="text-sm text-gray-400">PostgreSQL, MySQL</span>
+                </div>
+                <!-- Skill 2 -->
+                <div class="flex flex-col items-center p-4 bg-dark-secondary rounded-xl shadow-xl hover:shadow-accent-teal/30 transition duration-300 transform hover:scale-105 group transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="100">
+                    <i data-lucide="code" class="w-10 h-10 text-accent-teal group-hover:text-text-light transition duration-300 mb-2"></i>
+                    <span class="text-lg font-semibold text-text-light">Python / R</span>
+                    <span class="text-sm text-gray-400">Pandas, Scikit-learn</span>
+                </div>
+                <!-- Skill 3 -->
+                <div class="flex flex-col items-center p-4 bg-dark-secondary rounded-xl shadow-xl hover:shadow-accent-teal/30 transition duration-300 transform hover:scale-105 group transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="200">
+                    <i data-lucide="bar-chart-3" class="w-10 h-10 text-accent-teal group-hover:text-text-light transition duration-300 mb-2"></i>
+                    <span class="text-lg font-semibold text-text-light">Visualization</span>
+                    <span class="text-sm text-gray-400"> PowerBI</span>
+                </div>
+                <!-- Skill 4 -->               
+                <div class="flex flex-col items-center p-4 bg-dark-secondary rounded-xl shadow-xl hover:shadow-accent-teal/30 transition duration-300 transform hover:scale-105 group transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="400">
+                    <i data-lucide="git-branch" class="w-10 h-10 text-accent-teal group-hover:text-text-light transition duration-300 mb-2"></i>
+                    <span class="text-lg font-semibold text-text-light">Version Control</span>
+                    <span class="text-sm text-gray-400">Git / GitHub</span>
+                </div>
+
+                 <!-- Skill 5 -->               
+                <div class="flex flex-col items-center p-4 bg-dark-secondary rounded-xl shadow-xl hover:shadow-accent-teal/30 transition duration-300 transform hover:scale-105 group transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="600">
+                    <i data-lucide="file-spreadsheet" class="w-10 h-10 text-accent-teal group-hover:text-text-light transition duration-300 mb-2"></i>
+                    <span class="text-lg font-semibold text-text-light">Excel / Sheets</span>
+                    <span class="text-sm text-gray-400">Automation, Power Query</span>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="flex flex-col items-center p-4 bg-dark-secondary rounded-xl shadow-xl hover:shadow-accent-teal/30 transition duration-300 transform hover:scale-105 group transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="500">
+                    <i data-lucide="brain" class="w-10 h-10 text-accent-teal group-hover:text-text-light transition duration-300 mb-2"></i>
+                    <span class="text-lg font-semibold text-text-light">Statistical Analysis</span>
+                    <span class="text-sm text-gray-400">A/B Testing, Regression</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        =======================================
+        SECTION 4: PROJECTS (Case Studies)
+        =======================================
+    -->
+    <section id="projects" class="py-20 md:py-32 bg-dark-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-accent-teal mb-16 transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in>
+                Featured Projects & Case Studies
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Project Card 1 -->
+                <div class="project-card p-6 rounded-xl bg-dark-primary shadow-2xl transition duration-500 transform hover:shadow-accent-teal/50 hover:translate-y-[-5px] transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="0">
+                    <h3 class="text-2xl font-bold text-accent-teal mb-2">Device User Behavior Analysis (Excel)</h3>
+                    <span class="inline-block bg-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Behavioral Analytics</span>
+                    <p class="text-gray-300 mb-4">
+                        Performed a comprehensive analysis of device user session data using **Microsoft Excel**. Utilized **Pivot Tables** for aggregation and key metrics calculation, and created dynamic **charts** to visualize user engagement and behavioral patterns across mobile and desktop platforms.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm text-gray-400">
+                        <span class="tag">#Excel</span>
+                        <span class="tag">#PivotTables</span>
+                        <span class="tag">#DataViz</span>
+                        <span class="tag">#Behavioral-Analytics</span>
+                    </div>
+                    <a href="https://github.com/afeniki/Device-User-Behaviour-Analytics" target="_blank" class="mt-4 block text-accent-teal hover:text-emerald-400 font-medium group transition duration-300">
+                        View Project on GitHub 
+                        <i data-lucide="external-link" class="w-4 h-4 inline-block ml-1 opacity-70 group-hover:opacity-100 transition duration-300"></i>
+                    </a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card p-6 rounded-xl bg-dark-primary shadow-2xl transition duration-500 transform hover:shadow-accent-teal/50 hover:translate-y-[-5px] transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="100">
+                    <h3 class="text-2xl font-bold text-accent-teal mb-2">Real Estate Data Cleaning with SQL</h3>
+                    <span class="inline-block bg-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Data Preparation & ETL</span>
+                    <p class="text-gray-300 mb-4">
+                        Transformed raw housing data into a clean, analysis-ready dataset using SQL. Handled missing values, split address fields, and removed duplicates to ensure consistency and reliability.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm text-gray-400">
+                        <span class="tag">#TSQL</span>
+                        <span class="tag">#SQLServer</span>
+                        <span class="tag">#DataCleaning</span>
+                        <span class="tag">#DataAnalytics</span>
+                    </div>
+                    <a href="https://github.com/afeniki/SQL_Housing_DataCleaning/tree/main" class="mt-4 block text-accent-teal hover:text-emerald-400 font-medium group transition duration-300">
+                        View Project on GitHub 
+                        <i data-lucide="external-link" class="w-4 h-4 inline-block ml-1 opacity-70 group-hover:opacity-100 transition duration-300"></i>
+                    </a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card p-6 rounded-xl bg-dark-primary shadow-2xl transition duration-500 transform hover:shadow-accent-teal/50 hover:translate-y-[-5px] transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in data-delay="200">
+                    <h3 class="text-2xl font-bold text-accent-teal mb-2">House Price Prediction via Feature Engineering and Comparative Regression Models</h3>
+                    <span class="inline-block bg-gray-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Predictive Analysis</span>
+                    <p class="text-gray-300 mb-4">
+                        Cleaned and preprocessed 545 rows of raw housing data using Pandas. Executed Feature Engineering by encoding 7 categorical features, preparing a reliable dataset for Comparative Regression Modeling (Linear, Ridge, Lasso) of property values.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm text-gray-400">
+                        <span class="tag">#Python</span>
+                        <span class="tag">#Pandas</span>
+                        <span class="tag">#FeatureEngineering</span>
+                        <span class="tag">#Regression</span>
+                    </div>
+                    <a href="https://github.com/afeniki/Prediction-Analysis-of-House-Price-/blob/main/House%20Price%20Analysis.ipynb" class="mt-4 block text-accent-teal hover:text-emerald-400 font-medium group transition duration-300">
+                        View Project on GitHub  
+                        <i data-lucide="external-link" class="w-4 h-4 inline-block ml-1 opacity-70 group-hover:opacity-100 transition duration-300"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        =======================================
+        SECTION 5: CONTACT
+        =======================================
+    -->
+    <section id="contact" class="py-20 md:py-32">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center transform transition duration-500 ease-in-out opacity-0 translate-y-10" data-animate-in>
+            <h2 class="text-4xl font-bold text-accent-teal mb-4">
+                Let's Build Data-Driven Success
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                I am actively seeking opportunities where I can apply my analytical skills to complex business challenges.
+            </p>
+            <a href="mailto:ayoola.sinmiloluwa@gmail.com" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg shadow-xl text-dark-primary bg-accent-teal hover:bg-emerald-400 transition duration-300 transform hover:scale-105">
+                <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
+                Get in Touch via Email
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="bg-dark-secondary py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 Sinmiloluwa Afeniiki Ayoola. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- LinkedIn Link Added -->
+                <a href="https://www.linkedin.com/in/sinmiloluwa-ayoola-a366171b6"  class="hover:text-accent-teal transition duration-300">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/afeniki?tab=repositories" class="hover:text-accent-teal transition duration-300">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+            
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        /* =======================================
+           1. THREE.JS BACKGROUND ANIMATION (DATA MESH)
+           ======================================= */
+        let scene, camera, renderer, mesh, clock;
+
+        function initThreeJs() {
+            const container = document.getElementById('hero-canvas');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Scene setup
+            scene = new THREE.Scene();
+            clock = new THREE.Clock();
+
+            // Camera setup
+            camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            camera.position.z = 2; // Move camera back
+
+            // Renderer setup
+            renderer = new THREE.WebGLRenderer({ antialias: true, canvas: container, alpha: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Geometry (A large, segmented plane for the mesh effect)
+            const geometry = new THREE.PlaneGeometry(10, 10, 50, 50);
+
+            // Material
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x6EE7B7, // Accent Teal
+                wireframe: true,
+                transparent: true,
+                opacity: 0.1 // Make it subtle
+            });
+
+            // Mesh
+            mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            // Handle window resize
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            const container = document.getElementById('hero-canvas');
+            if (container) {
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                renderer.setSize(width, height);
+            }
+        }
+
+        function animateThreeJs() {
+            requestAnimationFrame(animateThreeJs);
+
+            const time = clock.getElapsedTime();
+
+            // Animate vertices of the mesh to create a flowing data look
+            const position = mesh.geometry.attributes.position;
+            for (let i = 0; i < position.count; i++) {
+                const x = position.getX(i);
+                const y = position.getY(i);
+
+                // Simple sine wave deformation based on time and position
+                const z = Math.sin(x * 0.5 + time * 0.5) * 0.2 +
+                          Math.sin(y * 0.5 + time * 0.5) * 0.2;
+
+                position.setZ(i, z);
+            }
+            position.needsUpdate = true;
+
+            // Subtle rotation
+            mesh.rotation.x = time * 0.01;
+            mesh.rotation.y = time * 0.01;
+
+            renderer.render(scene, camera);
+        }
+
+        /* =======================================
+           2. DYNAMIC TYPING EFFECT (HERO TEXT)
+           ======================================= */
+        const phrases = [
+            "A Data Analyst.",
+            "I design reporting solutions.",
+            "I automate Excel sheets.",
+            "I translate data into strategy.",
+            "I specialize in actionable insights."
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        let delayBeforeDelete = 1500;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            const typingElement = document.getElementById('typing-text');
+            
+            if (isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            // Check if full phrase is typed
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typingSpeed = delayBeforeDelete; // Pause before deleting
+            } 
+            // Check if phrase is fully deleted
+            else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 200; // Pause before typing next phrase
+            }
+
+            // Control the cursor blink effect
+            if (typingElement.textContent.length !== currentPhrase.length || isDeleting) {
+                typingElement.classList.add('border-r-4', 'border-accent-teal', 'animate-pulse');
+            } else {
+                 typingElement.classList.remove('border-r-4', 'border-accent-teal', 'animate-pulse');
+            }
+
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+
+        /* =======================================
+           3. SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
+           ======================================= */
+        function setupScrollReveal() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const delay = parseInt(target.getAttribute('data-delay')) || 0;
+                        
+                        setTimeout(() => {
+                            target.classList.remove('opacity-0', 'translate-y-10');
+                            target.classList.add('opacity-100', 'translate-y-0');
+                            observer.unobserve(target); // Stop observing once visible
+                        }, delay);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('[data-animate-in]').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+
+        /* =======================================
+           4. INITIALIZATION
+           ======================================= */
+        window.onload = function() {
+            // Start the Three.js data-mesh animation
+            initThreeJs();
+            animateThreeJs();
+
+            // Start the dynamic typing effect
+            typeWriter();
+
+            // Setup the scroll reveal effects
+            setupScrollReveal();
+        };
+
+    </script>
+</body>
+</html>
